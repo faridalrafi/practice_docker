@@ -1,6 +1,6 @@
 var express = require('express');
 var jwt = require('jsonwebtoken');
-// var bcrypt = require('bcryptjs');
+var bcrypt = require('bcryptjs');
 var router = express.Router();
 var models = require('../models');
 
@@ -27,8 +27,9 @@ router.get('/', function (req, res) {
 })
 
 router.post('/create', function (req, res) {
-  models.User.create({ name: req.body.name, username: req.body.username, email: req.body.email, password: req.body.password }).then(function () {
-    res.send('Success')
+  models.User.create({ name: req.body.name, username: req.body.username, email: req.body.email, password: req.body.password, id_rumah: req.body.id_rumah }).then(function () {
+  res.status(201) 
+  res.send({message: 'Success'})
   })
 });
 

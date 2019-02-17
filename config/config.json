@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "farid",
-    "password": "farid",
-    "database": "database_development",
+    "username": "nodesql",
+    "password": "Secret1",
+    "database": "nodesql",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

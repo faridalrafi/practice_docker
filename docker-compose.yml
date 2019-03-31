@@ -1,4 +1,4 @@
-
+version: "2"
 services:
   practice_docker: 
     image: 270896/practice_docker
@@ -16,4 +16,3 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=nodesql
-      

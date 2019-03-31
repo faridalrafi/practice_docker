@@ -15,7 +15,6 @@ services:
       - NODE_ENV = production
    
   postgres:
-    restart: always
     image: postgres:latest
     ports:
       - "5432:5432"

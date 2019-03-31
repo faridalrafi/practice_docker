@@ -14,8 +14,8 @@ COPY . .
 # run db migration
 ENV NODE_ENV = production
 
-RUN node_modules/.bin/sequelize db:create --env production
-RUN node_modules/.bin/sequelize db:migrate --env production
+#RUN node_modules/.bin/sequelize db:create --env production
+#RUN node_modules/.bin/sequelize db:migrate --env production
 # expose port 3000 and start the app
 EXPOSE 3000
 CMD [ "npm", "start" ]

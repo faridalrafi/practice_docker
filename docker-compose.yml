@@ -15,8 +15,6 @@ services:
   db:
     restart: always
     image: postgres:latest
-    volumes_from:
-      - data
     ports:
       - "5432:5432"
     environment:
@@ -24,5 +22,5 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=nodesql
       - NODE_ENV = production
-      
+
 

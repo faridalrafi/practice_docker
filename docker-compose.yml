@@ -4,15 +4,17 @@ services:
     image: 270896/practice_docker
     ports: 
       - 3000:3000
+      - 5432:5432
+
     command: bash -c 'node_modules/.bin/sequelize db:create --env production && node_modules/.bin/sequelize db:create --env production && while !</dev/tcp/db/5432; do sleep 1; done; npm start'
     depends_on:
-      - db
+      - postgres
     environment:
       - DATABASE_URL=postgres://postgres:postgres@db:5432/nodesql
       - PORT=3000
       - NODE_ENV = production
    
-  db:
+  postgres:
     restart: always
     image: postgres:latest
     ports:

@@ -9,7 +9,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:postgres@db:5432/nodesql
-      - PORT=3000   
+      - PORT=3000
+      - NODE_ENV = production
+   
   db:
     image: postgres
     environment:

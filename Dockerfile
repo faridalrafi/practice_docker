@@ -1,7 +1,6 @@
 # use the latest node LTS release
 FROM node:carbon
 WORKDIR /usr/src/app
-ENV NODE_ENV = production
 
 # copy package.json and package-lock.json and install packages. we do this
 # separate from the application code to better use docker's caching
@@ -13,6 +12,8 @@ RUN npm install
 # copy the app
 COPY . .
 # run db migration
+ENV NODE_ENV = production
+
 RUN node_modules/.bin/sequelize db:create
 RUN node_modules/.bin/sequelize db:migrate
 # expose port 3000 and start the app

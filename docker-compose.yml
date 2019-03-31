@@ -13,10 +13,16 @@ services:
       - NODE_ENV = production
    
   db:
-    image: postgres
+    restart: always
+    image: postgres:latest
+    volumes_from:
+      - data
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=nodesql
       - NODE_ENV = production
       
+

@@ -14,10 +14,10 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "farid",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "nodesql",
+    "host": "postgres",
     "dialect": "postgres"
   }
 }

@@ -8,12 +8,13 @@ ENV NODE_ENV = production
 # `npm install` will be cached on future builds if only the app code changed
 COPY package*.json ./
 RUN npm install
-RUN node_modules/.bin/sequelize db:create
-RUN node_modules/.bin/sequelize db:migrate
+
 
 # copy the app
 COPY . .
-
+# run db migration
+RUN node_modules/.bin/sequelize db:create
+RUN node_modules/.bin/sequelize db:migrate
 # expose port 3000 and start the app
 EXPOSE 3000
 CMD [ "npm", "start" ]

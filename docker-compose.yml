@@ -4,7 +4,7 @@ services:
     image: 270896/practice_docker
     ports: 
       - 4500:3000
-    command: npm start
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm start'
     depends_on:
       - db
     environment:

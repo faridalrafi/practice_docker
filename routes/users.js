@@ -64,7 +64,7 @@ router.post('/signin', function (req, res) {
       }
     }
   }).catch(err => {
-    res.status(500).send('Error -> ' + err);
+    res.status(500).send({error: err, env: process.env.NODE_ENV});
   });
 })
 

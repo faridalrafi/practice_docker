@@ -18,3 +18,5 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=nodesql
+      - NODE_ENV = production
+      
